@@ -12,8 +12,7 @@ export default (state = initialState, action) => {
         case "VOTE":
             const questionId =  parseInt(action.questionId) -1,
                   answerId = parseInt(action.answerId) -1;
-            let currentCount = state.getIn(["questions","questionsList", questionId,"answers",answerId, "responses" ])
-            return state.setIn(["questions","questionsList", questionId,"answers",answerId, "responses" ],currentCount+1);
+            return state.updateIn(["questions","questionsList", questionId,"answers",answerId, "responses" ],currentCount => currentCount+1);
         default:
             return state
     }
