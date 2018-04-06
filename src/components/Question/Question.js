@@ -22,7 +22,7 @@ class Question extends React.Component{
 		const {questionId , answerId} = this.state;
 		this.props.selectAnswer(questionId, answerId);
 		this.setState({showOtherResponses:true});
-		setTimeout(() => self.setState({showOtherResponses:false}) , 5000)
+		setTimeout(() => self.setState({showOtherResponses:false}) , 3000)
 	}
 	render(){
 		const {question} =  this.props
@@ -30,7 +30,7 @@ class Question extends React.Component{
 		let {showOtherResponses} = this.state;
 		return(	<div className="question-wrapper">
 					{(showOtherResponses)?
-						<div>
+						<div className={(showOtherResponses)? "show-message" : "hide-message"}>
 							<div className="alert alert-success" role="alert">
 						  		<button type="button" className="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 						  		<strong>Yello there</strong> you chose <span>{question.answers[answerId].text}</span>

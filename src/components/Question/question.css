@@ -21,8 +21,14 @@ label.form-radio-label{
   margin: 5px;
 }
 .question-wrapper{
+  position:relative;
 	margin-top:10px;
-	transition: all 0.3s ease;
+}
+.show-message{
+  float:right;
+}
+.hide-message{
+  opacity: 0;
 }
 
 .question-wrapper .alert{
