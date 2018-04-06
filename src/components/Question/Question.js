@@ -22,7 +22,7 @@ class Question extends React.Component{
 		const {questionId , answerId} = this.state;
 		this.props.selectAnswer(questionId, answerId);
 		this.setState({showOtherResponses:true});
-		//setTimeout(() => self.setState({showOtherResponses:false}) , 5000)
+		setTimeout(() => self.setState({showOtherResponses:false}) , 5000)
 	}
 	render(){
 		const {question} =  this.props
