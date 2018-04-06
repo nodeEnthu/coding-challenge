@@ -64,7 +64,7 @@ class Question extends React.Component{
 								})
 							}
 						</div>
-						<button disabled={(answerId || answerId === 0)? 'false':'true'}className="btn btn-primary" onClick={this.onAnswerSubmit}>Submit</button>
+						<button disabled={(answerId || answerId === 0)? false:true} className="btn btn-primary" onClick={this.onAnswerSubmit}>Submit</button>
 					</form>
 				</div>	
 		)
