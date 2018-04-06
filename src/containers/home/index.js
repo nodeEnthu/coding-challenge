@@ -9,7 +9,7 @@ import {increment} from '../../modules/counter'
 
 class Home extends React.Component{
   render(){
-    let {questions} = this.props;
+    let {questionsList} = this.props.questions.toJS();
     return(
       <div className="container">
         <div className="col-sm-12">
@@ -17,7 +17,7 @@ class Home extends React.Component{
           <h3 className="title">Coding challenge</h3>
           <hr/>
         {
-          questions.map((question,index) =>{
+          questionsList.map((question,index) =>{
             return <Question key={'questionId'+index} question={question} selectAnswer={this.props.increment} />
           })
         }
@@ -31,8 +31,7 @@ class Home extends React.Component{
 }
 
 const mapStateToProps = state => ({
-  count: state.counter.count,
-  questions: state.counter.questions, 
+  questions: state.counter.get("questions") 
 })
 
 const mapDispatchToProps = dispatch => bindActionCreators({
