@@ -22,7 +22,7 @@ class Question extends React.Component{
 		const {questionId , answerId} = this.state;
 		this.props.selectAnswer(questionId, answerId);
 		this.setState({showOtherResponses:true});
-		setTimeout(() => self.setState({showOtherResponses:false}) , 5000)
+		//setTimeout(() => self.setState({showOtherResponses:false}) , 5000)
 	}
 	render(){
 		const {question} =  this.props
@@ -39,7 +39,7 @@ class Question extends React.Component{
 								question.answers.map(function(answer,index){
 									if(index !== answerId){
 										return (
-											<div key={'othersChose'+index }className="alert alert-success" role="alert">
+											<div key={'othersChose'+index }className="alert alert-info" role="alert">
 										  		<button type="button" className="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 										  		<strong>{question.answers[index].responses}</strong> others chose <span>{question.answers[index].text}</span>
 											</div>
